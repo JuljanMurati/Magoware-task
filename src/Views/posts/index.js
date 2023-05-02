@@ -47,16 +47,21 @@ function Posts() {
   const handleUpdate = () => {
     updatePost(selectedPost).then((response) => {
       console.log("Updated");
+      alert("Your post is up to date!");
+      setIsUpdateModalOpen(false);
     });
   };
 
   const handleDelete = (id) => {
     deletePost(id);
+    alert("Post deleted !");
   };
 
   const handleCreate = () => {
     if (newPost?.userId && newPost?.title && newPost?.body) {
       createPost(newPost);
+      alert("You have create a new post successfully !");
+      setIsPostModalOpen(false);
     }
   };
 
